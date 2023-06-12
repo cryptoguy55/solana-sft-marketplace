@@ -37,7 +37,7 @@ const List: React.FC = () => {
     console.log(walletNftArray)
     let k: any[] = [] 
 
-    walletNftArray.filter(item=> item.data.symbol == "NICKEL").forEach( item => {
+    walletNftArray.forEach( item => {
       axios.get(item.data.uri)
       .then(res => {
         k.push({...res.data, ...item, listed: false})
